@@ -1,0 +1,7 @@
+train: C:\Users\DELL\PycharmProjects\abnormal_behaviour\train\images
+val: C:\Users\DELL\PycharmProjects\abnormal_behaviour\valid\images
+test: C:\Users\DELL\PycharmProjects\abnormal_behaviour\test\images
+
+nc: 2
+names: ['Normal', 'Abnormal']
+

@@ -1,0 +1,16 @@
+# Python venv
+abnormal_env_311/
+abnormal_env_312/
+__pycache__/
+
+# Large files
+*.pt
+*.avi
+*.mp4
+
+# IDE folders
+.idea/
+.vscode/
+
+# Ultralytics run logs
+runs/
