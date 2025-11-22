@@ -1,11 +1,15 @@
-**Detecting Human Abnormality Using YOLO & Conv2D**
+# **Detecting Human Abnormality Using YOLO & Conv2D**
 
-This project implements an intelligent video surveillance system capable of detecting abnormal human behavior in images, videos, and real-time camera streams using YOLOv8 and a custom Conv2D model.
+This project implements an intelligent video surveillance system capable of detecting abnormal human behavior in images, videos, and real-time camera streams using **YOLOv8** and a custom **Conv2D** model.
 
-📁 Project Structure
+---
+
+## 📁 **Project Structure**
+
+```
 abnormal_behaviour/
-│── .git/                 
-│── .idea/                
+│── .git/
+│── .idea/
 │── runs/                 # YOLO training outputs (weights, logs, graphs)
 │── test/                 # Testing dataset
 │── train/                # Training dataset
@@ -17,153 +21,150 @@ abnormal_behaviour/
 │── output_video.avi      # Sample output video
 │── real_time.py          # Real-time camera prediction
 │── train.py              # Training script for YOLO/Conv2D
-│── UI.py (User Interface) # GUI for image prediction
+│── UI.py                 # GUI for image prediction
 │── vid.mp4               # Sample input video
 │── vid_predict.py        # Video prediction script
 │── yolov8n.pt            # YOLOv8 pretrained weight file
+```
 
-⭐ Features
+---
 
-YOLOv8-based human detection
+## ⭐ **Features**
 
-Conv2D behavior analysis to classify:
+* **YOLOv8-based human detection**
+* **Conv2D behavior classifier** to identify:
 
-Normal behavior
+  * Normal behavior
+  * Abnormal behavior
+* Supports multiple detection modes:
 
-Abnormal behavior
+  * 🖼️ Image prediction
+  * 🎥 Video prediction
+  * 📷 Real-time webcam prediction
+* **Tkinter GUI** for user-friendly interaction
+* Compatible with **CPU & GPU**
+* Dataset annotated using **Roboflow**
+* Visualization includes:
 
-Supports multiple modes:
+  * Confusion matrix
+  * F1-score / Precision / Recall
+  * Label correlogram
+  * Training accuracy & loss graphs
 
-🖼 Image prediction
+---
 
-🎥 Video prediction
+## 🛠 **Tech Stack**
 
-📷 Real-time webcam prediction
+* Python 3.x
+* YOLOv8 (Ultralytics)
+* TensorFlow / Keras (Conv2D)
+* OpenCV
+* Tkinter
+* WandB – Model training & tracking
+* Roboflow – Dataset annotation
 
-Integrated Tkinter GUI
+---
 
-Supports both CPU and GPU inference
+## 📦 **Installation**
 
-Dataset trained using Roboflow annotations
+### 1. Create environment
 
-Visualization of:
-
-Confusion matrix
-
-F1 score / Precision / Recall
-
-Label correlogram
-
-Training accuracy & loss
-
-🛠 Tech Stack
-
-Python 3.x
-
-YOLOv8 (Ultralytics)
-
-TensorFlow / Keras (Conv2D model)
-
-OpenCV
-
-Tkinter GUI
-
-Roboflow – Annotation
-
-WandB – Training visualization & experiment tracking
-
-📦 Installation
-
-Create environment
-
+```
 conda create -n abnormal_env python=3.10
 conda activate abnormal_env
+```
 
+### 2. Install dependencies
 
-Install dependencies
-
+```
 pip install ultralytics opencv-python tkinter pillow torch torchvision roboflow wandb
+```
 
+### 3. Prepare dataset
 
-Download dataset
-Ensure your train/, test/, valid/ folders match the structure required by YOLO.
+* Ensure **train/**, **test/**, **valid/** folders follow YOLO format.
+* Update dataset path inside **data.yaml**.
 
-Edit dataset path in data.yaml
+---
 
-🚀 Running the Project
-1. Image Prediction (GUI)
+## 🚀 **Running the Project**
+
+### **Image Prediction (GUI)**
+
+```
 python UI.py
+```
 
-2. Video Prediction
+### **Video Prediction**
+
+```
 python vid_predict.py
+```
 
-3. Real-Time Detection
+### **Real-Time Detection**
+
+```
 python real_time.py
+```
 
-4. Training YOLO Model
+### **Training YOLO Model**
+
+```
 yolo detect train data=data.yaml model=yolov8n.pt epochs=100
+```
 
-🧠 Model Workflow
+---
 
-Data Preprocessing
+## 🧠 **Model Workflow**
 
-YOLOv8 detects humans
+1. Data preprocessing
+2. YOLOv8 detects human regions
+3. Conv2D model analyzes cropped regions
+4. Model classifies:
 
-Conv2D analyzes extracted regions
+   * **Normal**
+   * **Abnormal**
+5. Bounding boxes + behavior labels drawn on output frames
 
-Final model classifies:
+---
 
-Normal
+## 📊 **Results Summary**
 
-Abnormal
+* High real-time FPS
+* Strong mAP (50–95)
+* Low false positives in confusion matrix
+* High F1-score, precision, and recall
+* Effectively detects:
 
-Bounding boxes + labels drawn on output
+  * Fighting
+  * Aggressive gestures
+  * Unmannered poses
+  * Normal behavior
 
-📊 Results Summary
+---
 
-Real-time performance: High FPS
+## 📌 **Screenshots (Add Your Images)**
 
-mAP (50–95): Consistently strong across classes
+* Image detection examples
+* Video detection results
+* Real-time camera output
+* Training graphs & confusion matrices
 
-Confusion matrix: Low false positives
+---
 
-High F1-score, precision, and recall
+## 📚 **Citation / Reference**
 
-Successfully identifies:
+If you use this project, please cite:
 
-Fighting
+**Detecting Human Abnormality Using YOLO and Conv2D**,
+*Akshitha Priyadarshini M and team, 2024.*
 
-Aggressive gestures
+---
 
-Unmannered poses
+## 👥 **Authors**
 
-Normal human actions
+* **Akshitha Priyadarshini M**
+* **Abitha P V**
+* **Harini A K**
 
-📌 Screenshots (Overview)
-
-✔ Image detection examples
-
-✔ Video detection outputs
-
-✔ Real-time camera detection
-
-✔ Training graphs & confusion matrices
-
-(Include your project screenshots here)
-
-📚 Citation / Reference
-
-If you use this project, please cite your report:
-
-Detecting Human Abnormality Using YOLO and Conv2D,
-Akshitha Priyadarshini M and team, 2024.
-
-👥 Authors
-
-Akshitha Priyadarshini M
-
-Abitha P V
-
-Harini A K
-
-RMK Engineering College
+**RMK Engineering College**
