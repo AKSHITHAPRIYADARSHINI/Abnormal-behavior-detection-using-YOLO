@@ -1,0 +1,10 @@
+.git
+.gitignore
+.idea
+__pycache__
+*.pyc
+.env
+uploads
+output_video.avi
+*.log
+.DS_Store
